@@ -198,12 +198,12 @@
 
  .swpier-button-gray-left {
      opacity: 1 !important;
-     background-image: url(images/page2/prev-btn.png) !important;
+     background-image: url(../images/page2/prev-btn.png) !important;
  }
 
  .swpier-button-gray-right {
      opacity: 1 !important;
-     background-image: url(images/page2/next-btn.png) !important;
+     background-image: url(../images/page2/next-btn.png) !important;
  }
 
  .dpImg {
