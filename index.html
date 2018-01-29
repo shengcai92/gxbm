@@ -257,24 +257,47 @@
 <script type="text/javascript" src="js/zepto.min.js"></script>
 <script type="text/javascript" src="js/touch.js"></script>
 <script>
-
+	
+	
+	
 	/*去掉手机滑动默认行为 禁止微信拉伸*/
 	document.body.addEventListener('touchmove',bodyScroll);
 	function bodyScroll(event){
 		event.preventDefault();
 	}
-	//监控loading页面  
-//	setTimeout(function(){
-//		$(".loadLayer").hide();
-//	},2000)
-//	var times = null;
-//	times = setInterval(function(){
-//		animatedFn();
-//	},500)
-	window.onload = function(){
-		$(".loadLayer").hide();
-		animatedFn();
-	}
+	OnLoadElement();
+    function OnLoadElement(){
+    	var e=document.querySelector(".pageFirst")
+        var img= e.getElementsByTagName("img");
+        var num=0;
+        if(img.length<=0){
+            return 1;
+        }
+        for(var i=0;i<img.length;i++){
+            (function(j){
+                if(!img[j].complete){
+                    img[j].onload=function(){
+                        num++;
+                        if(num==img.length){
+                           setTimeout(function(){
+                    		 	$(".loadLayer").hide();
+							 	animatedFn();
+                    		},300)
+                        }
+                    }
+                }else{
+                    num++;
+                    if(num==img.length){
+                    	setTimeout(function(){
+                    		 $(".loadLayer").hide();
+							 animatedFn();
+                    	},300)
+                       
+                    }
+                }
+            })(i);
+        }
+    }
 	//页面加载动画效果
 	function animatedFn(){
 		if($(".loadLayer").css('display') == "none"){
@@ -301,7 +324,6 @@
 //			setTimeout(function() {
 //				$(".J_size").addClass("shake")
 //			}, 2000)
-			clearInterval(times);
 		}
 	}
 	
