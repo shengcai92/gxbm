@@ -115,6 +115,8 @@
      width: 290px;
      height: 290px;
      border-radius: 50%;
+ }
+ .footerCar{
      animation: footerCar 15s linear infinite;
      animation-play-state: running;
      -webkit-animation-play-state: running;
@@ -484,7 +486,9 @@
      font-size: 12px;
      overflow:auto;
  }
-
+ .layer-activeRule-content p{
+ 	margin-bottom: 2px;
+ }
  .pageSecond,
  .pageThird,
  .pageFour {
@@ -520,14 +524,13 @@
      }
  }
 
- .footer-earth {
-     animation: motionRound 15s linear infinite;
+.earthAnimate{
+	 animation: motionRound 15s linear infinite;
      animation-play-state: running;
      -webkit-animation-play-state: running;
      transform-origin: 50% 50%;
- }
-
- @keyframes motionRound {
+}
+ @keyframes earthAnimate {
      0% {
          transform: rotate(0deg);
      }
@@ -536,7 +539,7 @@
      }
  }
 
- @-webkit-keyframes motionRound {
+ @-webkit-keyframes earthAnimate {
      0% {
          transform: rotate(0deg);
      }
@@ -578,7 +581,10 @@
     bottom: 37px;
     left: 0px;
     bottom: 32px;
-    -webkit-animation: ball-scale 1s 1.5s ease-in-out forwards;
+    
+ }
+ .cityAnimate{
+ 	-webkit-animation: ball-scale 1s 1.5s ease-in-out forwards;
     animation: ball-scale 1s 1.5s ease-in-out forwards;
 	opacity:0;
  }
@@ -1099,4 +1105,53 @@
         -webkit-transform: none;
         transform: none
     }
+}
+
+
+/*** 加载层   ***/
+.loadLayer{
+	/*display: none;*/
+	z-index: 10000;
+	position: fixed;
+	left: 0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+}
+.loadLayer-car{
+	margin:auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top:0;
+	bottom: 0;
+	display: block;
+	width: 90px;
+	height: 96px;
+}
+.loadLayer-car-picture{
+    transform: rotate(308deg);
+    width: 100%;
+}
+.loadLayer-car .car-wheel-front{
+    position: relative;
+    right: 4px;
+    top: -50px;
+    width: 22px;
+}
+
+.loadLayer-car .car-wheel-end{
+    position: relative;
+    float: right;
+    right: -3px;
+    top: -71px;
+    width: 22px;
+}
+.hintInfo{
+	position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 120px;
+    font-size: 12px;
 }
