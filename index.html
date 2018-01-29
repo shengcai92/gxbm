@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/swiper.min.css" />
     <link rel="stylesheet" href="css/global.css" />
 	<link rel="stylesheet" href="css/index.css">
+
 </head>
 <body>
 	<!-- 页面一 -->
@@ -21,17 +22,15 @@
         <!--主要信息   BEGIN-->
         <div class="pageOne-section">
             <div class="section-first">
-                <span class="animated bounceInLeft cssjr">共享宝马</span>
-                <img src="images/car.png" class="carAnimate " />
+                <span class="J_gxbm">共享宝马</span>
+                <img src="images/car.png" class=" J_car " />
             </div>
             <div class="section-second">
-                <img src="images/gofun.png" class="animated bounceInLeft adimatedTime1"/>
-				 <span class="animated sizeAnimate" style="right:54px;">来</span>
-				<span class="animated  sizeAnimateSecond">袭</span>
-               
-               
+                <img src="images/gofun.png" class=" J_gofun"/>
+				 <span class="] J_size" style="right:54px;">来</span>
+				<span class="] J_size">袭</span>
             </div>
-            <img src="images/lowPrice.png" class="section-third animated bounceInLeft adimatedTime2" />
+            <img src="images/lowPrice.png" class="section-third  J_dz" />
         </div>
         <!--主要信息   END-->
         <!-- 底部 BEGIN-->
@@ -148,7 +147,7 @@
         </div>
     </div>
     <!--页面4-->
-    <div class="pageFour pageWrap cssjr"/>
+    <div class="pageFour pageWrap cssjr" />
          <!--头部-->
         <div class="pageTwo-header">
             <img src="images/icon.png" class="fl" />
@@ -227,6 +226,15 @@
 <script type="text/javascript" src="js/zepto.min.js"></script>
 <script type="text/javascript" src="js/touch.js"></script>
 <script>
+
+
+    window.onload = function(){
+        $(".J_gxbm").addClass("animated bounceInLeft")
+        $(".J_car").addClass("carAnimate")
+        $(".J_gofun").addClass("animated bounceInLeft adimatedTime1");
+        $(".J_size").addClass("animated  sizeAnimateSecond");
+        $(".J_dz").addClass("animated bounceInLeft adimatedTime2");
+    }
 	//初始化swpier
 	var mySwiper = new Swiper('.swpier-second', {
 	    prevButton: '.swiper-button-prev',
@@ -238,6 +246,25 @@
 	pageSecond();
 	pageThird();
 	pageFour();
+	
+	setTimeout(function(){
+		$(".J_size").addClass("shake")
+	},2000)
+//	var times = null;
+//	var timesOut =  setTimeout(function(){
+//		if($('.carAnimate').length){
+//			$(".J_car").removeClass("carAnimate");
+//			clearTimeout(times);
+//			times = setTimeout(function(){
+//				$(".J_car").addClass("carAnimate");
+//			},2000)
+//		}else{
+//			$(".J_car").addClass("carAnimate");
+//		}
+//	},3000)
+	
+	
+	
 	//页面一相关功能
 	function pageFrist() {
 		nextPage(document.querySelector(".footer-order"),1);
@@ -283,8 +310,8 @@
                     $(".wingFly").css("visibility","visible");
                      $(".wingFly-big div").eq(0).addClass("flyAnimation");
                     $(".wingFly-big div").eq(1).addClass("flyAnimationRight");
-                     $(".wingFly-samll div").eq(0).addClass("flyAnimation");
-                    $(".wingFly-samll div").eq(1).addClass("flyAnimationRight");
+                     $(".wingFly-samll div").eq(0).addClass(" flyAnimationRight");
+                    $(".wingFly-samll div").eq(1).addClass("flyAnimation");
                 },1000)
                
             }
