@@ -78,7 +78,7 @@
 
  .section-second span {
      position: absolute;
-     right: 14px;
+     right: 10px;
      bottom: 0;
      font-size: 42px;
      font-weight: bold;
@@ -138,9 +138,6 @@
      }
  }
 
-
-
-
  .footer-car {
     position: absolute;
     right: -40px;
@@ -148,7 +145,46 @@
      width: 140px;
      z-index: 3;
  }
+ 
+ .car-wheel-front{
+	position: absolute;
+    right: 60px;
+    top: 14px;
+    width: 34px;
 
+ }
+ 
+ .wheelRotate{
+	animation: wheelRotate 1s linear infinite;
+    animation-play-state: running;
+    -webkit-animation-play-state: running;
+    transform-origin: 50% 50%;
+ }
+  @keyframes wheelRotate {
+     0% {
+         transform: rotate(360deg);
+     }
+     100% {
+         transform: rotate(0deg);
+     }
+ }
+
+ @-webkit-keyframes wheelRotate {
+     0% {
+         transform: rotate(360deg);
+     }
+     100% {
+         transform: rotate(0deg);
+     }
+ }
+ .car-wheel-front img{width:100%}
+ .car-wheel-end{
+	position: absolute;
+	right: -10px;
+    top: 107px;
+    width: 34px;
+ }
+.car-wheel-end img{width:100%}
  .footer-order {
      margin: 0 auto;
      position: fixed;
@@ -544,16 +580,13 @@
     bottom: 37px;
     left: 0px;
     bottom: 32px;
-    -webkit-animation: ball-scale 1s 0s ease-in-out;
-          animation: ball-scale 1s 0s ease-in-out ;
+    -webkit-animation: ball-scale 1s 1.5s ease-in-out forwards;
+    animation: ball-scale 1s 1.5s ease-in-out forwards;
+	opacity:0;
  }
  .footer-city {
     width: 100%;
     transform: rotate(25deg);
-    /* width: 372px; */
-     // width: 0;
-       
-     // animation-delay: 1s;
  }
 
  .pageFour-layer {
@@ -748,16 +781,16 @@
     animation-name: sizeAnimate;
     -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
-     animation-delay:1.6s;
-    -webkit-animation-delay:1.6s; 
+     animation-delay:1.2s;
+    -webkit-animation-delay:1.2s; 
 }
 .sizeAnimateSecond{
     -webkit-animation-name: sizeAnimateSecond;
     animation-name: sizeAnimateSecond;
     -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out
-    animation-delay:2.5s;
-    -webkit-animation-delay:2.5s; 
+    animation-delay:1.5s;
+    -webkit-animation-delay:1.5s; 
 }
 
 @keyframes sizeAnimateSecond{
@@ -868,4 +901,11 @@
     }
 }
 
-
+.adimatedTime1{
+	 animation-delay:.6s;
+    -webkit-animation-delay:.6s; 
+}
+.adimatedTime2{
+	 animation-delay:1.2s;
+    -webkit-animation-delay:1.2s; 
+}
