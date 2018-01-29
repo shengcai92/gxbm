@@ -148,13 +148,34 @@
         </div>
     </div>
     <!--页面4-->
-    <div class="pageFour pageWrap cssjr">
-        <!--头部-->
+    <div class="pageFour pageWrap cssjr"/>
+         <!--头部-->
         <div class="pageTwo-header">
             <img src="images/icon.png" class="fl" />
             <img src="images/page2/logo-right.png" class="fr" />
         </div>
-        <img src="images/page2/success-img1.png" class="dpImg" />
+        <img src="images/page2/success-img1.png" class="dpImg" style="width:70%;margin:0 auto 18px;"/>
+        <!--翅膀 飞起来-->
+        <div class="wingFly">
+            <div class="wingFly-big">
+                <div class="fl " >
+                 <img src="images/page4/wing-img_09.png" />
+                 </div>
+                 <div class="fl ">
+                 <img src="images/page4/wing-img_14.png"  />
+                 </div>
+            </div>
+
+             <div class="wingFly-samll">
+                <div class="fl " >
+                 <img src="images/page4/wing-img_06.png" />
+                 </div>
+                 <div class="fl ">
+                 <img src="images/page4/wing-img_03.png"  />
+                 </div>
+             </div>
+        </div>
+
         <img src="images/page2/success-img2.png" class="dpImg" />
         <div class="affirm J_shade" style="width:156px">奔走相告</div>
     </div>
@@ -257,6 +278,16 @@
 	function nextPage(ele,index){
 		ele.onclick = function(){
 			$(".pageWrap").eq(index).addClass("fadeInDown");
+            if(index == 3){
+                setTimeout(function(){
+                    $(".wingFly").css("visibility","visible");
+                     $(".wingFly-big div").eq(0).addClass("flyAnimation");
+                    $(".wingFly-big div").eq(1).addClass("flyAnimationRight");
+                     $(".wingFly-samll div").eq(0).addClass("flyAnimation");
+                    $(".wingFly-samll div").eq(1).addClass("flyAnimationRight");
+                },1000)
+               
+            }
 		}
 	}
 	

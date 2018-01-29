@@ -477,14 +477,12 @@
 
  .layer-activeRule-content {
      margin-top: 10px;
-     width: 300px;
+     width: 100%;
+     height: 256px;
      line-height: 20px;
      color: #6c6c6c;
      font-size: 12px;
-     transform: scale(0.8);
-     -webkit-transform: scale(0.8);
-     -webkit-transform-origin: 0 0;
-     transform-origin: 0 0;
+     overflow:auto;
  }
 
  .pageSecond,
@@ -908,4 +906,109 @@
 .adimatedTime2{
 	 animation-delay:1.2s;
     -webkit-animation-delay:1.2s; 
+}
+
+.wingFly{
+    visibility: hidden;
+    margin:0 auto;
+    width:70%;
+    position:relative;
+    height:60px;
+    margin-bottom:22px;
+}
+.wingFly-big{
+    transform: rotate(24deg);
+    position: absolute;
+    bottom: -10px;
+    left: 30px;
+}
+
+.wingFly-big div:first-child{
+    width:68px;
+    margin-right: 4px;
+}
+.wingFly-big div:first-child img{
+    width:100%;
+}
+.wingFly-big div:nth-child(2){
+    width:55px;
+}
+.wingFly-big div:nth-child(2) img{
+    width:100%;
+}
+
+
+
+.wingFly-samll{
+    position: absolute;
+    top: 6px;
+    right: 34px;
+    transform: rotate(-24deg);
+}
+.wingFly-samll img:first-child{
+    width:22px;
+    margin-right: 4px;
+}
+.wingFly-samll img:nth-child(2){
+    width:26px;
+}
+
+
+.flyAnimation{
+    -webkit-animation: flyAnimation 1.6s 0s ease-in-out;
+    animation: flyAnimation 1.6s 0s ease-in-out;
+}
+
+@keyframes flyAnimation{
+
+    0% {
+        opacity: 0;
+        transform:translateY(5px) rotate(30deg);
+    }
+    
+    40%{
+        opacity: 1;
+        transform:translateY(5px) rotate(0deg);
+    }
+    60%{
+        opacity: 0;
+        transform:translateY(0px) rotate(30deg);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: rotate(0deg);
+        transform: none
+    }
+}
+
+
+.flyAnimationRight{
+    -webkit-animation: flyAnimationRight 1.6s 0s ease-in-out forwards;
+    animation: flyAnimationRight 1.6s 0s ease-in-out forwards;
+
+}
+
+@keyframes flyAnimationRight{
+
+    0% {
+        opacity: 0;
+        transform:translateY(5px) rotate(-40deg);
+    }
+    
+    40%{
+        opacity: 1;
+        transform:translateY(5px) rotate(-30deg);
+    }
+
+     60%{
+        opacity: 0;
+        transform:translateY(0px) rotate(-40deg);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: rotate(-30deg);
+        transform: none
+    }
 }
